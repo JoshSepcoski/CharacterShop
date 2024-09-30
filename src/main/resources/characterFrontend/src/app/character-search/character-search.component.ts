@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { CharacterComponent } from '../character/character.component';
 import { CommonModule } from '@angular/common';
 import { Character } from '../character';
+import { CharacterService } from '../character.service';
 
 @Component({
   selector: 'app-character-search',
@@ -24,15 +25,17 @@ import { Character } from '../character';
   styleUrl: './character-search.component.css'
 })
 export class CharacterSearchComponent {
-   characterList: Character[] = [{ 
-    id: 123,
-    name: 'Test Name',
-    charClass: "Test Class",
-   },
-   { 
-    id: 124,
-    name: 'Test Name2',
-    charClass: "Test Class2",
-   }
-  ];
+
+
+  characterList: Character[] = [];
+  characterService: CharacterService = inject(CharacterService);
+  filteredCharacterList: Character[] = [];
+
+  constructor() {
+    this.characterService.getCharacters().then((characterList: Character[]) => {
+      this.characterList = characterList;
+      this.filteredCharacterList = characterList;
+    });
+
+}
 }

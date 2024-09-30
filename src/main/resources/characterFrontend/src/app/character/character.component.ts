@@ -1,5 +1,6 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, Input, input, inject } from '@angular/core';
 import { Character } from '../character';
+import { CharacterService } from '../character.service';
 
 @Component({
   selector: 'app-character',
@@ -13,4 +14,5 @@ import { Character } from '../character';
 })
 export class CharacterComponent {
   @Input() character!: Character;
+  CharacterService: CharacterService = inject(CharacterService);
 }

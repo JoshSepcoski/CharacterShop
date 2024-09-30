@@ -7,7 +7,7 @@ import { Character } from './character';
 export class CharacterService {
 
 
-  url = 'http://localhost:4200';
+  url = 'http://localhost:8080';
   async getCharacters(): Promise<Character[]> {
     const data = await fetch(`${this.url}/characters/`);
     return await data.json() ?? [];
