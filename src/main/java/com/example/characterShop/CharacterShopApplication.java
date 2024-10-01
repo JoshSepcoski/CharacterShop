@@ -19,8 +19,8 @@ public class CharacterShopApplication {
     @Bean
     ApplicationRunner init(CharacterRepository repository) {
         return args -> {
-            Stream.of(new Charactere(null, "Name1", "charClass1"), new Charactere(null, "A Brief History of Time", "Stephen Hawking"),
-                    new Charactere(null, "Brave New World", "Aldous Huxley")).forEach(charactere -> {
+            Stream.of(new Charactere(null, "Legolas", "Ranger"), new Charactere(null, "Gimli", "Tank"),
+                    new Charactere(null, "Gandalf", "Wizard")).forEach(charactere -> {
                 repository.save(charactere);
             });
         };

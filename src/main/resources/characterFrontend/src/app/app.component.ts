@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CharacterSearchComponent } from './character-search/character-search.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CharacterSearchComponent],
+  imports: [RouterLink, RouterOutlet, CharacterSearchComponent],
   template: `
   <main>
-    <header class="brand-name">
+  <a [routerLink]="['/']">
+      <header class="brand-name">
       <h2>Character Inspo</h2>
-    </header>
+      </header>
+    </a>
     <section class="content">
-      <app-character-search></app-character-search>
+    <router-outlet></router-outlet>
     </section>
   </main>
 `,

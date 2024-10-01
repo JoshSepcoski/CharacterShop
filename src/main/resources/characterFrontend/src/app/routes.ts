@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { CharacterDetailsComponent } from './character-details/character-details.component';
 import { CharacterSearchComponent } from './character-search/character-search.component';
 
-export const routes: Routes = [
+const routes: Routes = [
     {
       path: '',
       component: CharacterSearchComponent,
@@ -14,4 +14,5 @@ export const routes: Routes = [
       title: 'Character details'
     }
   ];
+  
   export default routes;

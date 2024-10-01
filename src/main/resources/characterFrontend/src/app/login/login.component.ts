@@ -5,9 +5,14 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   template: `
-    <p>
-      login works!
-    </p>
+    <section>
+    <form>
+      <input type="text" placeholder="Username">
+      <button class="primary" type="button">Username</button>
+      <input type="text" placeholder="Username">
+      <button class="primary" type="button">Password</button>
+    </form>
+  </section>
   `,
   styleUrl: './login.component.css'
 })
